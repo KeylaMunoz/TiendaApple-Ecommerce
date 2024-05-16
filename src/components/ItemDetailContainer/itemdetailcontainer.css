@@ -1,3 +1,34 @@
-/* .card-detail{
+.card-detail{
+    display: grid;
+    margin: 5% 10%;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "img-d titulo-d"
+    "img-d descripcion"
+    "img-d precio-d";
 
-} */
+} 
+
+.img-detail{
+    grid-area: img-d;
+    width: 300px;
+}
+
+.titulo-detail{
+    grid-area: titulo-d;
+    margin-top: 4%;
+}
+
+.descripcion{
+    grid-area: descripcion;
+    font-size: large;
+    margin: 0%;
+}
+
+.precio-detail{
+    grid-area: precio-d;
+    margin: 0%;
+    
+
+}

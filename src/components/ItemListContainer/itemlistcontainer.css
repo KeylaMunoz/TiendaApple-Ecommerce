@@ -1,33 +1,51 @@
+.link-card{
+    text-decoration: none;
+  color: inherit;
+}
+
 .contenedor-padre{
     margin: 3%;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px 40px;
+    gap: 30px 50px;
 }
 
 .card{
     display: grid;
-    width: 13vw;
-    height: 48vh;
+    width: 17vw;
+    height: 100%;
     padding: 1%;
     text-align: center;
     border: solid 1px black;
-}
-
-.titulo-card{
-    font-weight: 600;
-    font-size:larger;
-    height: 35px;
+    border-bottom-right-radius: 20px;
+    grid-template-rows: 1fr, 2fr, 1fr;
+    grid-template-areas: 
+    "titulo"
+    "precio"
+    "img";
 }
 
 .img-card{
-    width: 150px;
+    margin: 0% 15%;
+    grid-area: img;
+    width: 70%;
     object-position: center;
-
 }
 
-/* .precio-card{
+.titulo-card{
+    margin-bottom: 0%;
+    grid-area: titulo;
+    font-weight: 600;
+    font-size:larger;
+    height: 35px;
+    text-decoration: none;
+  color: inherit;
+}
 
-}  */
+.precio-card{
+    margin: 0%;
+    grid-area: precio;
+    margin-bottom: 10%;
+} 
