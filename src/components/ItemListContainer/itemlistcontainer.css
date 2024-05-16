@@ -1,4 +1,33 @@
-.h1-container{
+.contenedor-padre{
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+}
+
+.card{
+    display: grid;
+    width: 13vw;
+    height: 48vh;
+    padding: 1%;
     text-align: center;
+    border: solid 1px black;
+}
+
+.titulo-card{
+    font-weight: 600;
+    font-size:larger;
+    height: 35px;
+}
+
+.img-card{
+    width: 150px;
+    object-position: center;
 
 }
+
+/* .precio-card{
+
+}  */
