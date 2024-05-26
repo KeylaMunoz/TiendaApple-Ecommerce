@@ -1,0 +1,38 @@
+.contenedor-contador{
+    display: grid;
+    grid-template-columns: 70px 20px 70px;
+    grid-template-rows: 40px 40px;
+    grid-template-areas: 
+    "resta contador suma"
+    "agregar agregar agregar";
+
+}
+.restar-contador{
+    margin-top: 12%;
+    margin-left: 60%;
+
+}
+.sumar-contador{
+    margin-top: 12%;
+    margin-left: 10%;
+
+}
+.p-contador{
+    grid-area: contador;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    font-size: x-large;
+}
+.agregar-carrito{
+    grid-area: agregar;
+    margin: 0%;
+    font-size:medium;
+    font-weight: 600;
+    border-radius: 17px;
+    border: none;
+    background: rgb(253,41,41);
+background: linear-gradient(90deg, rgba(253,41,41,1) 20%, rgba(184,17,17,1) 83%);
+    color: white;
+}

@@ -7,14 +7,11 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({});
     const {idProducto} = useParams();
 
-    console.log("producto:", idProducto)
-
     useEffect( () => {
       obtenerProductos()
         .then((respuesta) => {
           const productoFind = respuesta.find ((productoRes) => productoRes.id===idProducto)
           setProducto(productoFind);
-          console.log(productoFind)
         })
         .catch((error) => {
           console.log(error);
@@ -27,4 +24,5 @@ const ItemDetailContainer = () => {
   return (
     <ItemDetail producto = {producto}/>
   )}
+  
 export default ItemDetailContainer

@@ -1,34 +1,40 @@
 .card-detail{
     display: grid;
-    margin: 5% 10%;
-    grid-template-columns: 2fr 4fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    margin: 5%;
+    grid-template-columns: 300px 600px;
+    grid-template-rows: 50px 70px 40px 80px;
     grid-template-areas: 
     "img-d titulo-d"
     "img-d descripcion"
-    "img-d precio-d";
+    "img-d precio-d"
+    "img-d contador";
 
 } 
 
 .img-detail{
     grid-area: img-d;
-    width: 300px;
+    width: 250px;
 }
 
 .titulo-detail{
     grid-area: titulo-d;
-    margin-top: 4%;
+   margin: 0%;
 }
 
 .descripcion{
     grid-area: descripcion;
-    font-size: large;
+    font-size: larger;
+    align-items: center;
     margin: 0%;
 }
 
 .precio-detail{
     grid-area: precio-d;
+    font-weight: 500;
+    font-size: larger;
     margin: 0%;
-    
+}
 
+.contador{
+    grid-area: contador;
 }

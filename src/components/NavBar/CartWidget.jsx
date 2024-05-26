@@ -1,12 +1,22 @@
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
+
 import './cartwidget.css'
-import { CiShoppingCart } from "react-icons/ci";
 
 const CartWidget = () => {
+  const { cantidadTotal } = useContext(CartContext)
+
+  let cantidad = cantidadTotal()
+
+
   return (
-    <div className='div-carrito'>
-      <CiShoppingCart color="white" size={38} className='carrito'/>
-      <p className='contador-carrito'>0</p>
-    </div>
+
+    <Link to="/cart" className='div-carrito'>
+      <HiOutlineShoppingBag color="white" size={25} className='carrito'/>
+      <p className='contador-carrito'> {cantidad >= 1 && cantidad} </p>
+    </Link>
   )
 }
 
