@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoRemoveCircleOutline } from "react-icons/io5";
+import { BsCartPlus } from "react-icons/bs";
 
 import "./itemcount.css"
 
@@ -14,7 +15,7 @@ const handleClickRestar = () => {
 }
 
 const handleClickSumar = () => {
-    if (contador <= producto.stock ) {
+    if (contador < producto.stock ) {
         setContador (contador + 1)
     }
 }
@@ -26,10 +27,15 @@ const handleClickAgregarCArrito = () => {
 
   return (
     <div className="contenedor-contador">
-        <IoRemoveCircleOutline size={22} className="restar-contador" onClick={handleClickRestar}/>
+        <IoRemoveCircleOutline size={22} className="restar-contador" color="#198a8a" onClick={handleClickRestar}/>
         <p className="p-contador">{contador}</p>
-        <IoIosAddCircleOutline size={22} className="sumar-contador" onClick={handleClickSumar}/>
-        <button className="agregar-carrito" onClick={handleClickAgregarCArrito}>Agregar al Carrito</button>
+        <IoIosAddCircleOutline size={22} className="sumar-contador" color="#198a8a" onClick={handleClickSumar}/>
+        <div className="contenedor-agregar-carrito">
+        <button className="agregar-carrito" onClick={handleClickAgregarCArrito}>Agregar al Carrito </button>
+        <p className="icono-agregar-carrito" >
+        <BsCartPlus color="white" size={18}/>
+        </p>
+        </div>
     </div>
   )
 }

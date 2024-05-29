@@ -1,16 +1,15 @@
 .div-carrito{
     display: flex;
+    text-decoration: none;
 }
 
 .carrito{
-    margin: 10px 0px 0px 400px;
+    margin: 33px 0px 0px 250px;
 }
 
 .contador-carrito{
-    margin: 10px 0px ;
-    padding: 0px 6px;
+    margin: 35px 2px ;
     color: white;
     font-size: 20px;
     font-weight: 400;
-    border-radius: 10px;
 }

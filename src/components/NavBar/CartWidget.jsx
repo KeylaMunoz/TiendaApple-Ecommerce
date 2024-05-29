@@ -1,5 +1,5 @@
-import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { useContext } from "react";
+import { BsCart } from "react-icons/bs";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const CartWidget = () => {
   return (
 
     <Link to="/cart" className='div-carrito'>
-      <HiOutlineShoppingBag color="white" size={25} className='carrito'/>
+      <BsCart color="white" size={30} className='carrito'/>
       <p className='contador-carrito'> {cantidad >= 1 && cantidad} </p>
     </Link>
   )

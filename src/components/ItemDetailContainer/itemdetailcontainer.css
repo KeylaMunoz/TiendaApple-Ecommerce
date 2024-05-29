@@ -38,3 +38,18 @@
 .contador{
     grid-area: contador;
 }
+
+.contenedor-publicidad{
+    display: flex;
+    justify-content: center;
+}
+.contenedor-video{
+    width: 100%;
+    height: 500px;
+}
+.video{
+    object-fit: cover;
+    width: 100%; 
+    height: 100%;
+    /* border-radius: 40px; */
+}

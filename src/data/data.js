@@ -160,12 +160,12 @@ const productos = [
     }
 ]
 
-//promise para obtener productos
+//obtener productos
 const obtenerProductos = () => {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve(productos)
-        }, 2300);
+        }, 1000);
     });
 };
 

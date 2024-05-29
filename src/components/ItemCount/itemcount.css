@@ -1,6 +1,6 @@
 .contenedor-contador{
     display: grid;
-    grid-template-columns: 70px 20px 70px;
+    grid-template-columns: 75px 20px 75px;
     grid-template-rows: 40px 40px;
     grid-template-areas: 
     "resta contador suma"
@@ -25,14 +25,37 @@
     margin-top: 5%;
     font-size: x-large;
 }
-.agregar-carrito{
+.contenedor-agregar-carrito{
+    position: relative;
     grid-area: agregar;
-    margin: 0%;
-    font-size:medium;
+    text-align: center;
+    border-radius: 25px;
+    /* border: solid 1px rgb(223, 255, 255); */
+    border: solid 2px rgb(153, 197, 197);
+}.contenedor-agregar-carrito:hover{
+    box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+.contenedor-agregar-carrito:active{
+    transform: scale(0.9);
+}
+
+.agregar-carrito{
+    padding: 12px 7px 12px 40px;
+    font-size: 14px;
     font-weight: 600;
-    border-radius: 17px;
+    border-radius: 25px;
     border: none;
-    background: rgb(253,41,41);
-background: linear-gradient(90deg, rgba(253,41,41,1) 20%, rgba(184,17,17,1) 83%);
-    color: white;
+    background: linear-gradient(90deg, rgb(223, 255, 255) 20%,rgb(125, 224, 224) 83%);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.icono-agregar-carrito{
+    position: absolute;
+    transform: translateY(-155%) translateX(14%);
+    background-color: rgb(0, 0, 0);
+    border-radius: 18px;
+    padding: 6px 8px;
 }
