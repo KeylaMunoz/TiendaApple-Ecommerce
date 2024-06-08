@@ -1,4 +1,5 @@
-import Item from "./Item"
+import Item from "./Item";
+import VideoBanner from "../VideoBanner/VideoBanner";
 import './itemlistcontainer.css'
 
 const ItemList = ({productos, idCategoria}) => {
@@ -10,13 +11,7 @@ const ItemList = ({productos, idCategoria}) => {
 
   return (
     <div>
-      <div className="contenedor-publicidad">
-         <div className="contenedor-video">
-          <video loop autoPlay  className="video" >
-            <source src="https://www.apple.com/105/media/us/mac/family/2024/60fc0159-4236-4a03-8534-f5ba07e538c5/anim/welcome/xlarge.mp4"/>
-          </video>
-        </div>
-      </div>
+      <VideoBanner/> 
       <p className='titulo-categoria'>
         {idCategoria ? `${mayuscula(idCategoria)}` : "Apple"}
       </p> 

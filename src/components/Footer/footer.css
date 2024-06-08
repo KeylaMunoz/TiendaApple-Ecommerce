@@ -1,0 +1,26 @@
+.contenedor-footer{
+    display: grid;
+    background-color: black;
+    color: white;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". footer1 footer2";
+    padding-bottom: 1%;
+    margin-top: 10%;
+
+}
+.footer1{
+    grid-area: footer1;
+    padding: 4% 0% 0% 20%;
+    line-height: 1.2;
+}
+.footer2{
+    padding-right: 10%;
+    grid-area: footer2;
+}
+
+.link{
+    display: block;
+    margin-bottom: 2%;
+    text-decoration: none;
+    color: white;
+}

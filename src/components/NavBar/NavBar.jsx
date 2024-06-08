@@ -19,7 +19,7 @@ const NavBar = () => {
             <ul className="ul">
                 <Link to="/categoria/iphone" className="items">
                   <div className="div-nav">
-                  <IoIosPhonePortrait size={35} className="img-iphone"/><IoPhonePortraitOutline size={33} className="img-iphone"/>
+                  <IoPhonePortraitOutline size={33} className="img-iphone"/>
                   </div>
                   iPhone</Link>
                 <Link to="/categoria/macbook" className="items">

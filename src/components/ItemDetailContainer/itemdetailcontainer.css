@@ -1,37 +1,42 @@
 .card-detail{
     display: grid;
-    margin: 5%;
-    grid-template-columns: 300px 600px;
-    grid-template-rows: 50px 70px 40px 80px;
-    grid-template-areas: 
+    margin: 5% 10%;
+    width: 65vw;
+    height: 50vh;
+    grid-template-columns: 24% 73%;
+    grid-template-rows: 21% 26% 13% 28%;
+    align-items: center;
+    justify-content: center;
+    gap: 2% 3%;
+    grid-template-areas:
     "img-d titulo-d"
     "img-d descripcion"
     "img-d precio-d"
     "img-d contador";
 
-} 
+}
 
 .img-detail{
     grid-area: img-d;
-    width: 250px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .titulo-detail{
     grid-area: titulo-d;
-   margin: 0%;
+    margin: 0%;
 }
 
 .descripcion{
     grid-area: descripcion;
-    font-size: larger;
-    align-items: center;
+    font-size: 130%;
     margin: 0%;
 }
 
 .precio-detail{
     grid-area: precio-d;
-    font-weight: 500;
-    font-size: larger;
+    font-weight: 600;
+    font-size: 150%;
     margin: 0%;
 }
 
@@ -39,17 +44,23 @@
     grid-area: contador;
 }
 
-.contenedor-publicidad{
-    display: flex;
-    justify-content: center;
+.ir-carrito{
+    padding: 0.5% 1.5%;
+    width: 120px;
+    font-size: 120%;
+    font-weight: 600;
+    margin: 1.5%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    border: solid 2px rgb(153, 197, 197);
+    background: linear-gradient(90deg, rgb(223, 255, 255) 20%,rgb(125, 224, 224) 83%);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
 }
-.contenedor-video{
-    width: 100%;
-    height: 500px;
-}
-.video{
-    object-fit: cover;
-    width: 100%; 
-    height: 100%;
-    /* border-radius: 40px; */
-}
+.ir-carrito:hover{
+    box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
+    cursor: pointer;
+} 

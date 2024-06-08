@@ -1,7 +1,10 @@
-import obtenerProductos from '../../data/data';
+
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import db from '../../db/db.js';
+import Loading from '../Loading/Loading.jsx';
 
 import './itemlistcontainer.css';
 
@@ -10,34 +13,49 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(false)
   const {idCategoria} = useParams()
 
-  //llamamos a la promesa y que se ejecute una sola ver con useEffect
-useEffect( () => {
-
-  setLoading(true)
-
-  obtenerProductos()
-  .then((respuesta) => {
-    if(idCategoria){
-      const productosFilter = respuesta.filter ( (productoRes) => productoRes.categoria === idCategoria)
-      setProductos(productosFilter)
-
-    }else{
-      setProductos(respuesta)
-    }
-  })
-  .catch((error) => {
+  const getProductos = () => {
+    setLoading(true)
+    const productosRef = collection(db, "productos")
+    getDocs(productosRef)
+    .then((productosDb) => {
+      const data = productosDb.docs.map( (producto) => {
+        return {id: producto.id, ...producto.data()}
+      })
+      setProductos(data)
+    })
+    .catch((error) => {
     console.log(error);
-  })
-  .finally(() => {
-    setLoading(false)
-  });
-}, [idCategoria]);
+    })
+    .finally(() => setLoading(false));
+  }
+
+  const traerProductosPorCategoria = () => {
+    setLoading(true)
+
+    const productosRef = collection(db, "productos")
+    const q = query(productosRef, where("categoria", "==", idCategoria))
+    getDocs(q)
+    .then((productosDb) => {
+      const data = productosDb.docs.map( (producto) => {
+        return {id: producto.id, ...producto.data()}
+      })
+      setProductos(data)
+    })
+    .finally(() => setLoading(false))
+  }
+
+  //llamamos a la promesa y que se ejecute una sola ver con useEffect
+  useEffect( () => {
+
+    idCategoria ? traerProductosPorCategoria() : getProductos()
+  
+  }, [idCategoria]);
 
 
   return (
     <div>
         {
-          loading ? <img className='img-loading' src="https://global.discourse-cdn.com/sitepoint/original/3X/e/3/e352b26bbfa8b233050087d6cb32667da3ff809c.gif" alt="" /> : <ItemList productos = {productos} idCategoria = {idCategoria} />
+          loading ? <Loading/> : <ItemList productos = {productos} idCategoria = {idCategoria} />
         }
     </div>
   );

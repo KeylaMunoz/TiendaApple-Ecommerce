@@ -1,36 +1,41 @@
-import { useState, useEffect } from "react"
-import obtenerProductos from "../../data/data"
-import ItemDetail from "./ItemDetail"
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { toast } from 'react-toastify'
+import db from "../../db/db.js";
+import Loading from "../Loading/Loading.jsx";
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({});
     const [loading, setLoading] = useState(false)
     const {idProducto} = useParams();
 
-    useEffect( () => {
-      
-    setLoading(true)
-
-      obtenerProductos()
-        .then((respuesta) => {
-          const productoFind = respuesta.find ((productoRes) => productoRes.id===idProducto)
-          setProducto(productoFind);
+    const traerProducto = () => {
+      const productoRef = doc(db, "productos", idProducto)
+      getDoc(productoRef)
+        .then((productoDb) => {
+          const data = {id: productoDb.id, ...productoDb.data()}
+          setProducto(data)
         })
         .catch((error) => {
-          console.log(error);
+          toast.error("Este producto no existe");
+          console.log(error)
         })
         .finally(() => {
-          setLoading(false)
+         setLoading(false)
         });
-  }, []);
+    }
+
+    useEffect( () => {
+      traerProducto()
+      setLoading(true)
+  }, [idProducto]);
 
   return (
     <div>
-      {
-        loading ? <img className='img-loading' src="https://global.discourse-cdn.com/sitepoint/original/3X/e/3/e352b26bbfa8b233050087d6cb32667da3ff809c.gif" alt="" /> :<ItemDetail producto = {producto}/>
-      }
+      {loading ? <Loading/> : <ItemDetail producto = {producto}/>}
     </div>
   )}
   
-export default ItemDetailContainer
+export default ItemDetailContainer;

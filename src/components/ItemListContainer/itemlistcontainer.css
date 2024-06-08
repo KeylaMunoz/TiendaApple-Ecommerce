@@ -3,8 +3,14 @@
   color: inherit;
 }
 
+.titulo-categoria{
+    font-size: 70px;
+    margin: 0% 0% 0% 4%;
+    font-weight: 600;
+}
+
 .contenedor-padre{
-    margin: 3%;
+    margin: 1% 3%;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -59,14 +65,10 @@
     font-weight: 400;
 } 
 
+/* ?? */
 .img-loading{
     width: 50px;
     margin-left: 48%;
     margin-top: 16%;
 }
 
-.titulo-categoria{
-    font-size: 70px;
-    margin: 2% 0% 1% 2%;
-    font-weight: 500;
-}

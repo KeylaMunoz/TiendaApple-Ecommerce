@@ -1,12 +1,12 @@
 .titulo1{
-    font-size: 30px;
+    font-size: 250%;
     text-align: center;
-    margin-bottom: 0%;
+    margin-bottom: 2%;
 }
 
 .titulo2{
-    font-size: 70px;
-    margin: 2% 0% 1% 2%;
+    font-size: 450%;
+    margin-left: 2%;
     font-weight: 500;
     text-decoration: none;
     color: rgb(41, 60, 66);
@@ -14,69 +14,70 @@
     color: black;
 }
 
-.titulo-carrito{
-    font-size: 70px;
-    margin: 2% 0% 1% 2%;
-    font-weight: 500;
-}
 .contenedor-links{
-    margin-top: 2%;
+    margin: 2% 0%;
     display: grid;
     width: 100%;
-    grid-template-columns: 49.9% 50%;
+    grid-template-columns: 49.5% 49.5%;
     grid-template-rows: 50% 50%;
-    gap: 0.1%;
+    gap: 1%;
     grid-template-areas:
     "link1 link2"
     "link3 link4";
 }
+
 .link1{
-    grid-area: link1;
+grid-area: link1;
 }
 .link2{
-    grid-area: link2;
+grid-area: link2;
 }
 .link3{
-    grid-area: link3;
+grid-area: link3;
 }
 .link4{
-    grid-area: link4;
+grid-area: link4;
 }
 .img1, .img2, .img3, .img4{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
+width: 100%;
+height: 100%;
+object-fit: cover;
+overflow: hidden;
 }
 
+.titulo-carrito{
+font-size: 450%;
+margin: 2% 0% 1% 2%;
+font-weight: 500;
+}
 .contenedor-producto-carrito{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "img titulo precio1 cantidad precio2 borrar";
-    background-color:  rgb(236, 243, 243);
-    border-radius: 10px;
-    width: 99%;
-    overflow: hidden;
-    height: 145px;
-    align-items: center;
-    border: solid 2px #c6cdd7;
-    margin: 0.5%;
+display: grid;
+grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+grid-template-areas: "img titulo precio1 cantidad precio2 borrar";
+background-color:  rgb(236, 243, 243);
+border-radius: 10px;
+width: 99%;
+overflow: hidden;
+height: 140px;
+align-items: center;
+border: solid 2px #c6cdd7;
+margin: 0.5%;
 }
 .contenedor-img-producto{
-    overflow: hidden;
-    grid-area: img;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    border-right: solid 2px #c6cdd7;
+overflow: hidden;
+grid-area: img;
+width: 100%;
+height: 100%;
+background-color: rgb(255, 255, 255);
+border-right: solid 2px #c6cdd7;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .img-producto-carrito{
     width: 60%;
-    display: flex;
-    margin: 6% 0% 0% 20%;
     border-radius: 10px;
-    
 }
 
 .titulo-producto-carrito{
@@ -88,49 +89,62 @@
 .precio-unidad{
     grid-area: precio1;
     text-align: center;
-    font-size: larger;
+    font-size: 130%;
     font-weight: 500;
 }
 .cantidad-producto-carrito{
     grid-area: cantidad;
     text-align: center;
-    font-size: larger;
+    font-size: 130%;
     font-weight: 500;
 }
 .precio-total{
     grid-area: precio2;
     text-align: center;
-    font-size: larger;
+    font-size: 130%;
     font-weight: 500;
 }
 .borrar-producto{
     grid-area: borrar;
-    margin: 0% 38%;
-    background-color: black;
-    padding: px;
-    border-radius: 30px;
     cursor: pointer;
+    border: none;
+}
+.icono-borrar{
+    color: black;
+    font-size: 350%;
+}.icono-borrar:hover{
+    transform:scale(0.9);
 }
 
 .contenedor-compra{
-    margin-top: 12px;
+    margin-top: 3%;
     margin-bottom: 5%;
+    width: 100%;
     display: flex;
     background-color:  rgb(236, 243, 243);
     border: solid 2px #c6cdd7;
+    align-items: center;
+    padding: 1% 0%;
 }
 .precio-total-carrito{
-font-size: 28px;
-margin: 1% 2% 1% 53%;
+font-size: 180%;
 font-weight: 500;
+width: 75%;
+text-align: right;
+padding-right: 3%;
+margin: 0%;
+}
+.contenedor-boton-compra{
+    width: 22%;
+    text-align: center;
 }
 .contenedor-boton-compra:active{
     transform: scale(0.9);
 }
+
 .compra{
-    padding: 12px 10px 12px 50px;
-    margin: 10px 0px 10px 16px;
-    font-size: 22px;
+    padding: 3% 5% 3% 16%;
+    font-size: 127%;
     font-weight: 600;
     border-radius: 25px;
     border: none;
@@ -145,11 +159,15 @@ font-weight: 500;
 }
 .icono-compra{
     position: absolute;
-    transform: translateY(-189%) translateX(70%);
+    transform: translateY(-156%) translateX(128%);
     background-color: rgb(0, 0, 0);
-    border-radius: 18px;
-    padding: 7px 8px;
+    border-radius: 20px;
+    padding: 0.5% 0.6%;
     cursor: pointer;
+}
+.estilo-icono{
+    font-size: 120%;
+    color: white;
 }
 
 .vaciar-carrito{
@@ -157,9 +175,9 @@ font-weight: 500;
     background-color:  rgb(236, 243, 243);
     border: solid 2px #c6cdd7;
     border-radius: 5px;
-    padding: 8px 18px;
-    font-size: 18px;
-    margin: 0.5% 0% 0.5% 88% ;
+    padding: 0.5% 1%;
+    font-size: 100%;
+    margin: 1% 0% 0% 88% ;
 }.vaciar-carrito:hover{
     cursor: pointer;
     box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.4);
