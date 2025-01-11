@@ -34,9 +34,10 @@ const NavBar = () => {
                 Watch</Link>
                 <Link to="/categoria/accesorios" className="items">
                   <div className="div-nav">
-                  <img className="img-airpods" src="https://imperativeprods.com/cdn/shop/files/IMG_6368.jpg?v=1715939691&width=533" alt="" />
+                  <img className="img-airpods" src="https://www.citypng.com/public/uploads/preview/white-airpods-earbuds-vector-icon-701751695126438f406eb2y0e.png" alt="" />
                   </div>
                 Accesorios</Link>
+        
             </ul>
         <CartWidget/>
         </div>
